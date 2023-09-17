@@ -1,0 +1,9 @@
+.umirc.ts
+packages/**/__tests__/**
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+.eslintrc.js
+.dumirc.ts
+.fatherrc.ts
+config/**/*

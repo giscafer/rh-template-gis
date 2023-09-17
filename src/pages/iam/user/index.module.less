@@ -1,0 +1,99 @@
+.container {
+  height: 100% !important;
+  padding-top: 0 !important;
+
+  :global {
+    .left-pane {
+      min-width: 260px;
+      height: initial;
+      background-color: #f9f9fb;
+    }
+
+    .reflex-container {
+      overflow: inherit;
+
+      &.vertical > .reflex-splitter {
+        // display: none;
+        height: calc(100vh - 80px);
+        background-color: transparent !important;
+      }
+    }
+
+    .ant-pro-grid-content {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .ant-pro-page-container-children-content {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+.left-tree-panel {
+  height: 100%;
+  padding-top: 14px;
+  background: #f9f9fb;
+}
+
+.content-wrapper {
+  // overflow: auto !important;
+  left: -23px;
+  flex: 1;
+  height: 100%;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+
+  :global {
+    .reflex-container {
+      height: auto;
+      // overflow: hidden;
+    }
+  }
+
+  .info-content {
+    border-bottom: 8px solid #f9f9fb;
+  }
+
+  .edit-icon {
+    margin-top: -7.5px;
+    margin-left: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .table-content {
+    padding-top: 8px;
+  }
+}
+
+.list-style a {
+  color: #505363;
+}
+
+.list-style-none {
+  color: #9ea5b2;
+}
+
+.list-style-none:hover {
+  color: #00b259;
+}
+
+:global {
+  .ant-dropdown-menu-item.ant-dropdown-menu-item-disabled.red span {
+    color: rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .reflex-container > .reflex-element {
+    overflow-y: hidden;
+  }
+
+  .successModal .ant-modal-confirm-btns {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}

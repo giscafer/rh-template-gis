@@ -1,0 +1,105 @@
+.permissionTreeTopLine {
+  display: flex;
+  justify-content: space-between;
+  color: #505363;
+  font-size: 14px;
+  font-family: 'PingFang SC Regular';
+}
+
+.permissionTopText {
+  font-size: 12px;
+}
+
+.permissionContent {
+  display: inline-block;
+  width: 100%;
+  min-height: 360px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: 1px Solid #ebecef;
+}
+
+.selectedIcon {
+  position: absolute;
+  // color: '#00b259';
+  right: 0;
+  padding-top: 6px;
+  font-size: 16px;
+}
+
+.permissionContent
+  :global(.ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode) {
+  padding: 5px 5px 5px 0;
+  border: 1px solid #ebecef;
+  border-bottom: none;
+}
+
+.permissionContent
+  :global(
+    .ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode:nth-child(even)
+  ) {
+  background-color: #fff !important;
+}
+
+.permissionContent
+  :global(
+    .ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode:nth-child(odd)
+  ) {
+  background-color: #f5f7fa !important;
+}
+
+// .permissionContent :global(.ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode > ul) {
+//   background-color: #F5F7FA;
+// }
+.permissionContent
+  :global(.ant-tree.ant-tree-block-node .ant-tree-list-holder-inner .ant-tree-node-content-wrapper:hover) {
+  color: #00b259;
+}
+
+.permissionContent :global(.anticon) {
+  color: #c6ccd7;
+}
+
+.permissionContent
+  :global(
+    .ant-tree
+      > .ant-tree-list
+      > .ant-tree-list-holder
+      .ant-tree-list-holder-inner
+      > .ant-tree-treenode
+      .ant-tree-node-content-wrapper:hover
+      .anticon
+  ) {
+  color: #505363;
+}
+
+.permissionContent
+  :global(
+    .ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode:first-child
+  ) {
+  margin-bottom: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #f9f9fbff !important;
+  border: none !important;
+}
+
+.permissionContent
+  :global(
+    .ant-tree > .ant-tree-list > .ant-tree-list-holder .ant-tree-list-holder-inner > .ant-tree-treenode:last-child
+  ) {
+  border-bottom: 1px solid #ebecef;
+}
+
+.permissionContent :global(.ant-tree.ant-tree-directory > li span.ant-tree-switcher) {
+  margin-left: 25px;
+}
+
+.permissionContent :global(.ant-tree.ant-tree-directory .ant-tree-treenode::before) {
+  bottom: 0 !important;
+}
+
+.permissionDiv {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}

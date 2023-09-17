@@ -1,0 +1,32 @@
+.sideBar {
+  // position: relative;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  z-index: 1000;
+  // height: 100vh;
+  height: calc(~'100vh - 56px');
+  box-shadow: 2px 0 2px rgb(0 0 0 / 10%);
+
+  :global {
+    .ant-layout-sider-children {
+      overflow-y: auto !important;
+      scrollbar-width: none;
+      -ms-overflow-style: none; /* IE 10+ */
+      &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+    }
+  }
+
+  .appVersion {
+    position: absolute;
+    bottom: 42px;
+    width: 100%;
+    color: #9ea5b2;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "./src/.umi/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES5",
+    "paths": {
+      "@/*": ["src/*"],
+      "@roothub/gis": ["packages/gis/src"],
+      "@roothub/gis/*": ["packages/gis/src/*", "*"]
+    }
+  }
+}

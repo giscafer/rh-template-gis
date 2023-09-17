@@ -1,0 +1,19 @@
+// 覆盖子应用下的loading样式
+div#root-master,
+div#root {
+  // http://jira2.irootech.com:8080/browse/BYPT-5342
+  & > div > section > div > main > div > div:nth-child(2) {
+    height: calc(~'100% -  42px');
+  }
+  // 隐藏子工程的loading，避免出现父子同时两个loading的情况
+  div#nodeAppRoot {
+    & > div.page-loading-spin {
+      display: none;
+    }
+    main.ant-layout-content {
+      & > div.page-loading-spin {
+        display: none;
+      }
+    }
+  }
+}

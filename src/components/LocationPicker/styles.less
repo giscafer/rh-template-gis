@@ -1,0 +1,212 @@
+.LocationPicker {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  max-height: 600px;
+  font-size: 14px;
+  white-space: nowrap;
+  // border: 1px solid #e8e9eb;
+  border-radius: 2px;
+  outline: 0;
+}
+
+.LocationPicker:not(.is-disabled) {
+  cursor: pointer;
+}
+
+.LocationPicker:not(.is-disabled):hover {
+  background: #fff;
+  border-color: #2468f2;
+}
+
+.LocationPicker:not(.is-disabled):hover .DatePicker-toggler:before {
+  color: #2468f2;
+}
+
+.LocationPicker.is-focused,
+.LocationPicker.is-active {
+  border-color: #2468f2;
+  box-shadow: none;
+}
+
+.LocationPicker.is-disabled {
+  background: #e5e7eb;
+}
+
+.LocationPicker.is-disabled > .LocationPicker-input {
+  color: #b8babf;
+}
+
+.LocationPicker.is-mobile {
+  border: 0;
+}
+
+.LocationPicker.is-mobile .LocationPicker-toggler svg {
+  top: 0.125rem;
+}
+
+.LocationPicker-placeholder {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin-right: 0.75rem;
+  color: #b8babf;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.LocationPicker-value {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: calc(100% - 1.25rem);
+  margin-right: 0.75rem;
+  overflow-x: auto;
+}
+
+.LocationPicker-toggler {
+  color: #84878c;
+  cursor: pointer;
+}
+
+.LocationPicker-toggler svg {
+  top: 0;
+}
+
+.LocationPicker-toggler:hover {
+  color: #2468f2;
+}
+
+.LocationPicker-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.25rem;
+  margin-left: auto;
+  padding: 4px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.LocationPicker-clear svg {
+  width: 14px;
+  height: 12px;
+  fill: #d4d6d9;
+}
+
+.LocationPicker-clear:hover svg {
+  fill: #5c5f66;
+}
+
+.LocationPicker-clear:active svg {
+  fill: #303540;
+}
+
+.LocationPicker-clear svg {
+  top: 0;
+}
+
+.LocationPicker-popup {
+  height: 28.75rem;
+}
+
+.LocationPicker-popup-inner {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.LocationPicker-popup-inner .MapPicker-search {
+  margin-bottom: 1rem;
+  padding-top: 0;
+}
+
+.LocationControl {
+  position: relative;
+  width: 100%;
+}
+
+.LocationControl.is-mobile {
+  flex: 1;
+  overflow: hidden;
+  text-align: right;
+}
+
+.LocationControl:not(.is-inline) > .LocationPicker {
+  display: flex;
+}
+
+.LocationPicker-popover {
+  width: 100%;
+  min-width: 320px;
+  max-width: 100%;
+  margin-top: -1px;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.MapPicker {
+  padding-top: 8px;
+}
+.MapPicker-sug,
+.MapPicker-result {
+  height: 300px;
+  padding: 5px 10px;
+  overflow-y: scroll;
+}
+.MapPicker-search {
+  padding: 5px 10px;
+  .TextControl-input {
+    width: 100%;
+    height: 2em;
+    border: 1px solid #e8e9eb;
+    border-radius: 0;
+    input {
+      flex-basis: 1.875rem;
+      flex-grow: 1;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background: transparent;
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+.MapPicker-map {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.MapPicker-item {
+  position: relative;
+  padding: 10px;
+  border-top: 1px solid #e8e9eb;
+}
+
+.MapPicker-item > svg {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.MapPicker-itemTitle {
+  font-size: 14px;
+}
+
+.MapPicker-itemDesc {
+  font-size: 10px;
+}
+
+.MapPicker-sugItem {
+  padding: 8px 12px;
+  border-top: 1px solid #e8e9eb;
+  cursor: pointer;
+}
+
+.MapPicker-sugItem:hover {
+  color: #2468f2;
+  background: #ffffff;
+}

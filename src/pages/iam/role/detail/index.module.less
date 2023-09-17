@@ -1,0 +1,51 @@
+.line {
+  position: relative;
+  left: -23px;
+  width: calc(100% + 23px);
+  height: 4px;
+  background-color: #f5f7faff;
+}
+
+.content {
+  :global {
+    .ant-tabs-nav-list {
+      left: 24px !important;
+    }
+  }
+  background-color: #fff;
+}
+.content_box {
+  padding: 1.5rem 24px 0 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  margin-bottom: 3px;
+  padding: 0 16px;
+  box-shadow: 0 2px 4px rgb(33 37 46 / 12%);
+  .headerTitle {
+    display: flex;
+  }
+  .headerTitle h5 {
+    position: relative;
+    top: 1px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .headerTitle .icon-back {
+    align-self: center;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+// :global {
+//   .ant-tree .ant-tree-treenode {
+//     padding: 0!important;
+//   }
+// }

@@ -1,0 +1,84 @@
+{
+  "type": "drawer",
+  "title": "用户详情",
+  "primaryField": "id",
+  "body": [
+    {
+      "dataIndex": "username",
+      "title": "用户名",
+      "dataType": "string",
+      "renderType": "input",
+      "required": false,
+      "validator": [{ "type": "maxLength", "value": "40" }]
+    },
+    {
+      "dataIndex": "sexDesc",
+      "title": "性别",
+      "dataType": "string"
+    },
+    {
+      "dataIndex": "phone",
+      "title": "手机号",
+      "dataType": "string"
+    },
+    {
+      "dataIndex": "newUser",
+      "title": "是否新用户",
+      "dataType": "string",
+      "required": false,
+      "renderType": "select",
+      "defaultValue": "true",
+      "valueEnum": [
+        { "label": "是", "value": "true" },
+        { "label": "否", "value": "false" }
+      ],
+      "dataConvert": [
+        {
+          "submitOn": "${value!=='false'?true:false}",
+          "displayOn": "${value===false?'false':'true'}"
+        }
+      ]
+    },
+    {
+      "dataIndex": "bindCar",
+      "title": "是否绑定车辆",
+      "dataType": "string",
+      "renderType": "select",
+      "defaultValue": "true",
+      "valueEnum": [
+        { "label": "是", "value": "true" },
+        { "label": "否", "value": "false" }
+      ],
+      "dataConvert": [
+        {
+          "submitOn": "${value!=='false'?true:false}",
+          "displayOn": "${value===false?'false':'true'}"
+        }
+      ]
+    },
+    {
+      "dataIndex": "bindCarNum",
+      "title": "绑定车辆",
+      "dataType": "string",
+      "required": false
+    },
+    {
+      "dataIndex": "orderNum",
+      "title": "预约次数",
+      "dataType": "string",
+      "required": false
+    },
+    {
+      "dataIndex": "statusDesc",
+      "title": "用户状态",
+      "dataType": "string"
+    },
+    {
+      "dataIndex": "createTime",
+      "title": "注册时间",
+      "dataType": "string",
+      "renderType": "dateTime",
+      "required": false
+    }
+  ]
+}

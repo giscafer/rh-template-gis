@@ -1,0 +1,45 @@
+.edge-content-wrapper {
+  flex: 1 1 0;
+  padding: 16px 24px;
+
+  &.on-padding-h {
+    padding: 16px 0 !important;
+  }
+
+  &.pl1 {
+    padding-left: 8px !important;
+  }
+
+  .button-area {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+
+    &.bottom {
+      &::before {
+        position: absolute;
+        top: -16px;
+        right: 0;
+        left: 0;
+        height: 16px;
+        background-image: linear-gradient(0deg, #fff, rgb(255 255 255 / 0%));
+        content: '';
+      }
+    }
+  }
+}
+
+.button-area {
+  margin: 0 !important;
+  padding: 16px 28px 0 0;
+  border-top: 1px solid #e4e8f0;
+
+  .ant-col-6 {
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+  }
+}
+
+:global(.clearfix) .edge-content-wrapper {
+  width: initial;
+}

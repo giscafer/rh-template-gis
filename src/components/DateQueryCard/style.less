@@ -1,0 +1,93 @@
+@import '~antd/es/style/themes/default.less';
+
+.cardExtra {
+  display: inline-block;
+  margin-right: 24px;
+
+  a {
+    margin-left: 24px;
+    color: @text-color;
+
+    &:hover {
+      color: @primary-color;
+    }
+
+    &.currentDate {
+      color: @primary-color;
+    }
+  }
+}
+
+.dateQueryCard {
+  .salesBar {
+    padding: 0 0 32px 32px;
+  }
+
+  .salesRank {
+    padding: 0 32px 32px 72px;
+  }
+
+  :global {
+    .ant-tabs-bar,
+    .ant-tabs-nav-wrap {
+      padding-left: 16px;
+
+      .ant-tabs-nav .ant-tabs-tab {
+        padding-top: 16px;
+        padding-bottom: 14px;
+        line-height: 24px;
+      }
+    }
+
+    .ant-tabs-extra-content {
+      padding-right: 24px;
+      line-height: 55px;
+    }
+
+    .ant-card-head {
+      position: relative;
+    }
+
+    .ant-card-head-title {
+      align-items: normal;
+    }
+  }
+}
+
+.dateQueryCardExtra {
+  height: inherit;
+}
+
+@media screen and (max-width: @screen-lg) {
+  .cardExtra {
+    display: none;
+  }
+
+  .rankingList {
+    li {
+      span:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .dateQueryCard .salesBar {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .cardExtraWrap {
+    display: none;
+  }
+
+  .dateQueryCard {
+    :global {
+      .ant-tabs-content {
+        padding-top: 30px;
+      }
+    }
+  }
+}
