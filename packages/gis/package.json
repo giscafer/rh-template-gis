@@ -2,10 +2,18 @@
   "name": "@roothub/gis",
   "version": "1.0.0",
   "description": "GIS ",
+  "license": "ISC",
+  "author": "giscafer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "giscafer",
-  "license": "ISC"
+  "dependencies": {
+    "maptalks": "^1.0.0-rc.25",
+    "maptalks.control.compass": "^0.2.0",
+    "maptalks.three": "^0.37.3",
+    "maptalks.wmts": "^1.0.3",
+    "stats.js": "^0.17.0",
+    "three": "^0.156.1"
+  }
 }

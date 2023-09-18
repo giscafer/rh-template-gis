@@ -5,7 +5,6 @@ import theme from '../src/config/theme';
 const path = require('path');
 const glob = require('glob');
 const fs = require('fs-extra');
-// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const getWorkspaceAlias = (cb = () => {}) => {
   const basePath = path.resolve(__dirname, '../');
@@ -60,20 +59,13 @@ export default defineConfig({
   // https://github.com/umijs/umi/issues/6576
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   chainWebpack: (config: any, { webpack }: any) => {
-    // const alias = getWorkspaceAlias();
+    const alias = getWorkspaceAlias();
 
-    // // const includeArr: string[] = [];
-    // for (const key in alias) {
-    //   // 设置 alias
-    //   config.resolve.alias.set(key, alias[key]);
-    //   // includeArr.push(path.join(__dirname, path.relative(__dirname, alias[key])));
-    // }
+    for (const key in alias) {
+      // 设置 alias
+      config.resolve.alias.set(key, alias[key]);
+    }
 
-    // monaco-editor
-    // config.plugin('monaco-editor-webpack-plugin').use(MonacoWebpackPlugin, [
-    //   // 按需配置
-    //   { languages: ['html', 'css', 'javascript', 'tsx', 'typescript'] },
-    // ]);
     return config;
   },
 });

@@ -8,8 +8,20 @@ import { useAccess } from 'umi';
 import { getPermissions, hasIam, IAM_DISABLE_KEY } from './auth/usePermissionMenu';
 import initLocales from './locales';
 import { IntlProvider } from './locales/localeExports';
+import { Provider as ReduxProvider } from 'react-redux';
+import store from './store';
 
 (window as any).BASE_URL = BASE_URL;
+
+(window as any).API = {
+  // maptalks
+  prod: {
+    tdtKey: '334754f5c01e3e2b827ead5dc861195b',
+  },
+  dev: {
+    tdtKey: '334754f5c01e3e2b827ead5dc861195b',
+  },
+};
 
 const { antd: antdLocale, locale, messages } = initLocales();
 
@@ -56,7 +68,8 @@ export const layout: any = ({ initialState }: any) => {
 // 自定义 rootContainer，解决之前使用数据流库（比如 unstated、redux）麻烦的问题
 export function rootContainer(container: any) {
   const React = require('react');
-  const rhElement = React.createElement(RhConfigProvider, null, container);
+  const reduxElement = React.createElement(ReduxProvider, { store }, container);
+  const rhElement = React.createElement(RhConfigProvider, null, reduxElement);
   const antdElement = React.createElement(ConfigProvider, { locale: antdLocale }, rhElement);
   return React.createElement(IntlProvider, { messages, locale }, antdElement);
 }

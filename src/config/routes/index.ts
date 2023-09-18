@@ -23,9 +23,9 @@ const routes = [
   { exact: true, path: '/', component: './welcome' },
   {
     path: '/home',
-    name: '总览',
+    name: '首页',
     // icon: 'rh-icon-home',
-    component: './dashboard/index',
+    component: './home/index',
     // ...genAccess('home'),
   },
   // IAM
