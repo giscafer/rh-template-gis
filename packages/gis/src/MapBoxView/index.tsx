@@ -1,6 +1,6 @@
-import MapBoxService from '@/shared/map/service/MapBoxService';
-import { MapBoxInstanceOptions } from '@/shared/map/type/MapBoxType';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import MapBoxService from '../service/MapBoxService';
+import { MapBoxInstanceOptions } from '../type/MapBoxType';
 import '../map.module.less';
 
 let map: any;

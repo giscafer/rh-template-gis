@@ -1,16 +1,11 @@
-import {
-  CloseOutlined,
-  CopyOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
+import defaultSettings from '../defaultSettings';
+import { CloseOutlined, SettingOutlined } from '@ant-design/icons';
 import { isBrowser } from '@ant-design/pro-utils';
 import { useUrlSearchParams } from '@umijs/use-params';
-import { Alert, Button, Drawer, message, Radio } from 'antd';
+import { Drawer, Radio } from 'antd';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
-import React, { useEffect, useRef, useState } from 'react';
-import defaultSettings from '@/defaultSettings';
+import React, { useEffect, useRef } from 'react';
 import './index.less';
-import BlockCheckbox from '@/components/BlockCheckbox';
 
 type BodyProps = {
   title: string;
@@ -70,10 +65,7 @@ const getDifferentSetting = (state: Partial<any>): Record<string, any> => {
   return stateObj;
 };
 
-const getParamsFromUrl = (
-  urlParams: Record<string, any>,
-  settings?: MergerSettingsType<any>,
-) => {
+const getParamsFromUrl = (urlParams: Record<string, any>, settings?: MergerSettingsType<any>) => {
   if (!isBrowser()) return defaultSettings;
 
   return {
@@ -139,11 +131,7 @@ const SettingDrawer: React.FC<SettingDrawerProps> = (props) => {
    * @param value
    * @param hideMessageLoading
    */
-  const changeSetting = (
-    key: string,
-    value: string | boolean,
-    hideMessageLoading?: boolean,
-  ) => {
+  const changeSetting = (key: string, value: string | boolean, hideMessageLoading?: boolean) => {
     const nextState = { ...preStateRef.current };
     nextState[key] = value;
 
@@ -171,10 +159,7 @@ const SettingDrawer: React.FC<SettingDrawerProps> = (props) => {
       placement="right"
       getContainer={getContainer}
       handler={
-        <div
-          className={`${baseClassName}-drawer-handle`}
-          onClick={() => setShow(!show)}
-        >
+        <div className={`${baseClassName}-drawer-handle`} onClick={() => setShow(!show)}>
           {show ? (
             <CloseOutlined
               style={{
@@ -202,9 +187,7 @@ const SettingDrawer: React.FC<SettingDrawerProps> = (props) => {
             size="small"
             defaultValue={defaultSettings.mapType}
             buttonStyle="solid"
-            onChange={(e: any) =>
-              changeSetting('mapType', e.target.value, hideLoading)
-            }
+            onChange={(e: any) => changeSetting('mapType', e.target.value, hideLoading)}
           >
             {mapTypeList.map((item) => {
               return (

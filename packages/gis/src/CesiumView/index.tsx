@@ -1,6 +1,6 @@
-import CesiumService from '@/shared/map/service/CesiumService';
-import { CesiumInstanceOptions } from '@/shared/map/type/CesiumType';
-import { ChangeLayerImageConfig } from '@/shared/map/type/CommonType';
+import CesiumService from '../service/CesiumService';
+import { CesiumInstanceOptions } from '../type/CesiumType';
+import { ChangeLayerImageConfig } from '../type/CommonType';
 import React, { useEffect } from 'react';
 import '../map.module.less';
 import 'cesium/Build/Cesium/Widgets/widgets.css';

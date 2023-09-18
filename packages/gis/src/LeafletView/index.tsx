@@ -1,7 +1,7 @@
-import LeafletService from '@/shared/map/service/LeafletService';
-import { ChangeLayerImageConfig } from '@/shared/map/type/CommonType';
-import { LeafletInstanceOptions } from '@/shared/map/type/LeafletType';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import LeafletService from '../service/LeafletService';
+import { ChangeLayerImageConfig } from '../type/CommonType';
+import { LeafletInstanceOptions } from '../type/LeafletType';
 import '../map.module.less';
 
 let map: any;

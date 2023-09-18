@@ -7,3 +7,4 @@ packages/**/__tests__/**
 .dumirc.ts
 .fatherrc.ts
 config/**/*
+packages/gis/**
