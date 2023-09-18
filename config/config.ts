@@ -37,9 +37,8 @@ export default defineConfig({
   theme,
   initialState: {},
   layout: {
-    layout: 'mix',
-    fixedHeader: true,
-    title: 'GIS&MIS',
+    title: 'GIS+MIS系统',
+    iconfontUrl: '//at.alicdn.com/t/c/font_4217061_7q65lr2j4de.js',
   },
   antd: {
     // https://ant.design/components/config-provider-cn/

@@ -2,7 +2,7 @@ import usePermissionMenu from '@/auth/usePermissionMenu';
 import { appVersion } from '@/config/constant';
 import { useTranslation } from '@/locales/localeExports';
 import { RhSidebar } from '@roothub/components';
-import { RhMenuData } from '@roothub/components/RhSidebar/types';
+import { RhMenuData } from '@roothub/components/lib/RhSidebar/types';
 import { useMount } from 'ahooks';
 import { Layout } from 'antd';
 import { useCallback, useMemo, useState } from 'react';
@@ -60,7 +60,7 @@ function SideBar({ menuData, pathName = '/welcome' }: Record<string, any>) {
     >
       <RhSidebar
         menuOptions={{
-          mode: 'inline',
+          mode: 'horizontal',
           style: { borderRight: 0 },
         }}
         menuData={finalMenuData}

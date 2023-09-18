@@ -1,7 +1,7 @@
 // 运行时配置
-import LayoutSideBar from '@/components/LayoutSideBar';
 import RightContent from '@/components/RightContent';
-import menuData from '@/config/menus';
+// import LayoutSideBar from '@/components/LayoutSideBar';
+// import menuData from '@/config/menus';
 import { RhConfigProvider } from '@roothub/components';
 import { ConfigProvider } from 'antd';
 import { useAccess } from 'umi';
@@ -40,23 +40,14 @@ export async function getInitialState(): Promise<Record<string, any>> {
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: any = ({ initialState }: any) => {
   return {
-    layout: 'mix',
+    layout: 'top',
     className: 'roothub',
     fixedHeader: true,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     logo: './logo.svg',
     rightContentRender: () => <RightContent />,
-    /*  waterMarkProps: {
-      content: initialState?.currentUser?.name,
-    }, */
-    menuRender: (menuProps: any) => {
-      const { location } = menuProps;
-      const { pathname } = location;
-      return <LayoutSideBar collapsible={false} menuData={menuData} pathName={pathname} />;
-    },
-    // 默认布局调整
     // menuHeaderRender: undefined,
-    ...initialState?.settings,
+    // ...initialState?.settings,
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
   };
