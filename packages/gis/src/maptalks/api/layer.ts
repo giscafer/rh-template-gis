@@ -5,7 +5,7 @@ import { swipeLayer } from '../init';
 import { utils, layerControl } from '../tools';
 
 class Layer {
-  currentGroupShow = ''; // 当前显示组
+  currentGroupShow = '地形图'; // 当前显示组
   beforeSwipeGroupShow = ''; // 在卷帘之前显示的组
   allBaseGroupName: string[] = []; // 所有图层组名
   renderer: any = null; // 渲染器

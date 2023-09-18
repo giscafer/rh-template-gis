@@ -49,7 +49,7 @@ const initMapVisual = () => {
     layers: _baseLayerConfig,
   });
 
-  layerApi.showLayerByGroupName('暗黑图');
+  layerApi.showLayerByGroupName('地形图');
   swipeLayer = map.getLayer('天地图地形图');
 
   // three
@@ -57,14 +57,14 @@ const initMapVisual = () => {
     forceRenderOnMoving: true,
     forceRenderOnRotating: true,
     forceRenderOnZooming: true,
-    // animation: true,
+    animation: true,
   });
 
   threeCustomLayer = new ThreeLayer('ThreeCustomLayer', {
     forceRenderOnMoving: true,
     forceRenderOnRotating: true,
     forceRenderOnZooming: true,
-    // animation: true,
+    animation: true,
   });
 
   threeLayer.addTo(map);

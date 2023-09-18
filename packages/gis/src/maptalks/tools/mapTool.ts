@@ -46,6 +46,7 @@ export default {
     // 帧数和渲染时间
     const stats = new Stats();
     stats.domElement.style.zIndex = 100;
+    // stats.domElement.style.marginTop = 300;
     document.getElementById('map')?.appendChild?.(stats.domElement);
 
     return stats;

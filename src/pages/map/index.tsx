@@ -17,8 +17,8 @@ const HomePage = () => {
   const [disableState, setDisableState] = useState(false);
 
   // 订阅更新
-  const currentGroupShow = useSelector((state: any) => state?.currentGroupShow);
-
+  const currentGroupShow = useSelector((state: any) => state?.currentGroupShow || '地形图currentGroupShow');
+  console.log('currentGroupShow=', currentGroupShow);
   // 监听全屏状态下的esc事件
   const windowChangeEvent = useCallback(() => {
     if (!utils.isFullScreen()) setFsTxt('进入全屏');
