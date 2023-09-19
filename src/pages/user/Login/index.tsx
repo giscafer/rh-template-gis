@@ -1,13 +1,14 @@
+import { saveToken } from '@/auth/auth';
+import { USER_PERMISSION, getResourceIdList } from '@/auth/usePermissionMenu';
 import Footer from '@/components/Footer';
 import { THEME_KEY } from '@/config/constant';
 import { colorSet } from '@/config/theme';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
-import { saveToken } from '@/auth/auth';
-import { getResourceIdList } from '@/auth/usePermissionMenu';
+import { sessionStore } from '@roothub/helper/storage';
 import { queryStringToObject } from '@roothub/helper/utils/queryString';
 import { Alert, Divider } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { history, Link, useModel } from 'umi';
+import { Link, history, useModel } from 'umi';
 import styles from './index.less';
 
 interface ILoginResult {
@@ -65,6 +66,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: Record<string, any>) => {
     setSubmitting(true);
     try {
+      sessionStore.remove(USER_PERMISSION);
       // 登录
       const authValue = await userLogin({
         ...values,
@@ -143,7 +145,7 @@ const Login: React.FC = () => {
                 size: 'large',
                 maxLength: 11,
               }}
-              placeholder="请输入手机号码(随意手机)"
+              placeholder="请输入手机号码"
               rules={[
                 {
                   required: true,
@@ -167,7 +169,7 @@ const Login: React.FC = () => {
                   message: '请输入密码!',
                 },
               ]}
-              placeholder="请输入密码(随意)"
+              placeholder="请输入密码)"
             />
           </ProForm>
           <a

@@ -20,12 +20,17 @@ const redirectToLogin = () => {
   const { redirect } = queryStringToObject(window.location.href as string);
   // Note: There may be security issues, please note
   if (window.location.pathname !== '/user/login' && !redirect) {
-    history.replace({
+    location.href =
+      '/user/login?' +
+      stringify({
+        redirect: pathname,
+      });
+    /* history.replace({
       pathname: '/user/login',
       search: stringify({
         redirect: pathname,
       }),
-    });
+    }); */
   }
 };
 

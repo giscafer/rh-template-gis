@@ -93,7 +93,7 @@ export function getResourceIdList(list: any[] = []) {
 // 获取权限并设置缓存
 export function getPermissions() {
   return new Promise<any>((resolve) => {
-    httpGet('/api/base/auth/getUserInfo')
+    httpGet('/api/base/auth/getUserInfo', {}, { silent: true })
       .then((res) => {
         const data = res?.data?.permissions || [];
         const permissionMap = getResourceIdList(data);
