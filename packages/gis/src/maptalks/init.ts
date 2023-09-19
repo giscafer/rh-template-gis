@@ -79,7 +79,9 @@ const initMapVisual = () => {
   };
 
   threeLayer.prepareToDraw = function (gl: any, scene: { add: (arg0: any) => void }, camera: any) {
-    stats = mapTool.setStats(); // 显示帧数和渲染时间
+    if (process.env.NODE_ENV === 'development') {
+      stats = mapTool.setStats(); // 显示帧数和渲染时间
+    }
     const light = new THREE.DirectionalLight(0xffffff);
     light.position.set(0, -10, 10).normalize();
 
@@ -109,7 +111,7 @@ const animation = () => {
     threeCustomLayer.renderScene();
   }
 
-  stats.update();
+  stats?.update?.();
   requestAnimationFrame(animation);
 };
 
