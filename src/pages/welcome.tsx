@@ -1,6 +1,6 @@
 import LoadingPage from '@/loading';
 import { useEffect } from 'react';
-import { history, useAccess, useModel } from 'umi';
+import { history, useAccess } from 'umi';
 import routes from '../config/routes';
 
 const blackList = ['/', '/welcome', '/login', '/403', '/404', '/demo'];
