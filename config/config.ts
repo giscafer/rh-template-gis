@@ -53,11 +53,11 @@ export default defineConfig({
       apps: [
         {
           name: 'sub-vue',
-          entry: !pro ? '//localhost:3000/sub-vue' : 'https://sub-vue.giscafer.com/',
+          entry: !pro ? '//localhost:3000/sub-vue' : '/sub-vue/',
         },
         {
           name: 'sub-react',
-          entry: !pro ? '//localhost:4000/sub-react' : 'https://sub-react.giscafer.com//',
+          entry: !pro ? '//localhost:4000/sub-react' : '/sub-react/',
         },
       ],
       sandbox: {

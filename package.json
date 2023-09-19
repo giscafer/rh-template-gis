@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "build": "cross-env UMI_ENV=test max build",
+    "postbuild": "bash ./scripts/postbuild.sh",
     "build:prod": "cross-env UMI_ENV=prod max build",
     "dev": "PORT=8003 max dev",
     "postinstall": "max setup",
