@@ -70,7 +70,7 @@ const routes = [
     name: '微前端Vue',
     microApp: 'sub-vue',
     microAppProps: {
-      // autoSetLoading: true,
+      autoSetLoading: true,
     },
     props: {
       isMicroApp: true,
@@ -84,7 +84,7 @@ const routes = [
   {
     path: '/sub-react',
     layout: {
-      // menuRender:false
+      menuRender: false,
     },
     name: '微前端React',
     microApp: 'sub-react',
