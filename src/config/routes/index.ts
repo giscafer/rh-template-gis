@@ -63,6 +63,44 @@ const routes = [
     ],
   },
   {
+    path: '/sub-vue',
+    layout: {
+      // menuRender:false
+    },
+    name: '微前端Vue',
+    microApp: 'sub-vue',
+    microAppProps: {
+      // autoSetLoading: true,
+    },
+    props: {
+      isMicroApp: true,
+    },
+    routes: [
+      {
+        path: '/sub-vue/*',
+      },
+    ],
+  },
+  {
+    path: '/sub-react',
+    layout: {
+      // menuRender:false
+    },
+    name: '微前端React',
+    microApp: 'sub-react',
+    microAppProps: {
+      // autoSetLoading: true,
+    },
+    props: {
+      isMicroApp: true,
+    },
+    routes: [
+      {
+        path: '/sub-react/*',
+      },
+    ],
+  },
+  {
     path: '/user',
     layout: false,
     routes: [

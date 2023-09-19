@@ -1,7 +1,7 @@
 import { defineConfig } from '@umijs/max';
 import routes from '../src/config/routes';
 import theme from '../src/config/theme';
-
+const pro = process.env.NODE_ENV === 'production';
 const path = require('path');
 const glob = require('glob');
 const fs = require('fs-extra');
@@ -48,7 +48,23 @@ export default defineConfig({
   access: {},
   model: {},
   request: {},
-
+  qiankun: {
+    master: {
+      apps: [
+        {
+          name: 'sub-vue',
+          entry: !pro ? '//localhost:3000/sub-vue' : 'https://sub-vue.giscafer.com/',
+        },
+        {
+          name: 'sub-react',
+          entry: !pro ? '//localhost:4000/sub-react' : 'https://sub-react.giscafer.com//',
+        },
+      ],
+      sandbox: {
+        experimentalStyleIsolation: true,
+      },
+    },
+  },
   /*   plugins: ["@alitajs/plugin-theme"],
   dynamicTheme: {
     type: "antd",
