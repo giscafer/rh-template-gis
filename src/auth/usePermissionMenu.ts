@@ -24,7 +24,7 @@ export const hasIam = () => {
  */
 const filterMenuByPermission = (menuItems: RhMenuItem[], permissionMap: Record<string, any>, t: any) => {
   const newMenuItems: any = [];
-  menuItems.forEach((menuItem: RhMenuItem & { access?: string; wrappers?: any; localeId?: string }) => {
+  menuItems.forEach((menuItem: RhMenuItem & { access?: string | string[]; wrappers?: any; localeId?: string }) => {
     if (menuItem.localeId && t) {
       menuItem.name = t(menuItem.localeId, { defaultMessage: menuItem.name });
     }
@@ -37,7 +37,16 @@ const filterMenuByPermission = (menuItems: RhMenuItem[], permissionMap: Record<s
       }
     } else if (menuItem.access) {
       // 需要权限控制台的菜单
-      if (permissionMap[menuItem.access]) {
+      if (Array.isArray(menuItem.access)) {
+        // access是数组，只要有一个权限满足即可
+        const hasPermission = menuItem.access.some((access: string) => permissionMap[access]);
+        if (hasPermission) {
+          newMenuItems.push(menuItem);
+          if (menuItem?.routes?.length) {
+            menuItem.routes = filterMenuByPermission(menuItem.routes, permissionMap, t);
+          }
+        }
+      } else if (permissionMap[menuItem.access]) {
         newMenuItems.push(menuItem);
         if (menuItem?.routes?.length) {
           menuItem.routes = filterMenuByPermission(menuItem.routes, permissionMap, t);
