@@ -3,7 +3,7 @@ import { signOut } from '@/auth/auth';
 import { queryStringToObject } from '@roothub/helper/utils/queryString';
 import { Avatar, Menu, Spin } from 'antd';
 import { stringify } from 'querystring';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { history, useModel } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
@@ -73,6 +73,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ showMenu = false }) 
     [initialState, setInitialState],
   );
 
+  const { currentUser = {} } = initialState;
+
+  const name = useMemo(() => {
+    return currentUser?.realName ?? currentUser?.nickName ?? currentUser?.userName ?? currentUser?.username;
+  }, [currentUser]);
+
   const loading = (
     <span className={`${styles.action} ${styles.account}`}>
       <Spin
@@ -92,8 +98,6 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ showMenu = false }) 
   if (!initialState) {
     return loading;
   }
-
-  const { currentUser = {} } = initialState;
 
   if (!currentUser.userId && !currentUser.id) {
     return loading;
@@ -130,7 +134,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ showMenu = false }) 
           src={currentUser.avatarUrl || 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png'}
           alt="avatar"
         />
-        <span>{currentUser?.nickName ?? currentUser?.userName}</span>
+        <span>{name}</span>
       </span>
     </HeaderDropdown>
   );

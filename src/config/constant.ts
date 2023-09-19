@@ -10,7 +10,7 @@ export const THEME_KEY = 'rh_theme';
 
 export const isMockMode = true;
 
-export const IAM_DISABLE_KEY = 'iamDisable';
+export const IAM_DISABLE_KEY = '_rh_iam_disable';
 
 export const iconFontUrl = '//at.alicdn.com/t/font_2875265_kc45d9jar1k.js';
 

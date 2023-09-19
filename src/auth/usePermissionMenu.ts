@@ -1,3 +1,4 @@
+import { loginStatus } from '@/config/config';
 import { useTranslation } from '@/locales/localeExports';
 import { RhMenuData, RhMenuItem } from '@roothub/components/lib/RhSidebar/types';
 import { httpGet } from '@roothub/helper/http';
@@ -6,11 +7,13 @@ import { useEffect, useState } from 'react';
 import { useAccess } from 'umi';
 
 export const USER_PERMISSION = '_permission_map';
-export const IAM_DISABLE_KEY = 'iamDisable';
+export const IAM_DISABLE_KEY = '_rh_iam_disable';
 
-// 临时写，解除项目耦合
-// 业务 代码 src\auth\iam.ts
 export const hasIam = () => {
+  if (!loginStatus) {
+    // 关闭登陆就不开启
+    return false;
+  }
   const iam = sessionStore.get(IAM_DISABLE_KEY) || storage.get(IAM_DISABLE_KEY);
   return !iam;
 };
@@ -92,6 +95,9 @@ export function getResourceIdList(list: any[] = []) {
 
 // 获取权限并设置缓存
 export function getPermissions() {
+  if (!loginStatus) {
+    return Promise.resolve({});
+  }
   return new Promise<any>((resolve) => {
     httpGet('/api/base/auth/getUserInfo', {}, { silent: true })
       .then((res) => {
