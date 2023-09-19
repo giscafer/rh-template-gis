@@ -114,7 +114,7 @@ const Login: React.FC = () => {
         <div className={styles.main}>
           <div className={styles.loginTitle}>账号登录</div>
           <ProForm
-            initialValues={{ phone: 'admin', password: '123456' }}
+            // initialValues={{ phone: 'admin', password: '123456' }}
             onFinish={async (values) => {
               handleSubmit(values);
             }}
