@@ -32,7 +32,7 @@ RhConfigProvider.config({
   accessFactory: useAccess,
   tableRequest: {
     pageInfoConfig: {
-      totalField: 'total',
+      totalField: 'totalSize',
       dataField: 'data',
       pageSizeField: 'pageSize',
       currentField: 'page',
