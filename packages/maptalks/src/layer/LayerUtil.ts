@@ -268,38 +268,6 @@ export default class LayerUtil {
         renderer: 'canvas',
       },
     ],
-    Ningbogang: [
-      {
-        urlTemplate: 'https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
-        subdomains: ['1', '2', '3', '4'],
-        minZoom: 4,
-        maxZoom: 18,
-        zIndex: 1,
-        tileRetryCount: 3,
-        crossOrigin: 'anonymous',
-        renderer: 'canvas',
-      },
-      {
-        urlTemplate:
-          'http://47.98.185.125:6080/arcgis/rest/services/%E5%AE%81%E6%B3%A2%E6%B8%AF/MapServer/tile/{z}/{y}/{x}',
-        minZoom: 11,
-        maxZoom: 18,
-        tileRetryCount: 3,
-        crossOrigin: 'anonymous',
-        renderer: 'canvas',
-        spatialReference: {
-          projection: 'EPSG:3857',
-          //坐标转换规则
-          //console.log(map.getProjection().project(new maptalks.Coordinate(121.537975, 29.766565)));
-          fullExtent: {
-            top: 3509761,
-            bottom: 3473579,
-            right: 13594524,
-            left: 13529545,
-          },
-        },
-      },
-    ],
   };
 
   static trafficLayerParam = {
