@@ -17,3 +17,5 @@ yarn.lock
 /.idea
 JTBVideo.js
 JTBMap.js
+JTBMap-copy.js
+Map-backup.ts

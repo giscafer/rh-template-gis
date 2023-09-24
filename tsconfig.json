@@ -4,8 +4,8 @@
     "target": "ES5",
     "paths": {
       "@/*": ["src/*"],
-      "@roothub/gis": ["packages/gis/src"],
-      "@roothub/gis/*": ["packages/gis/src/*", "*"]
+      "@roothub/gis": ["packages/maptalks/src"],
+      "@roothub/gis/*": ["packages/maptalks/src/*", "*"]
     }
   }
 }
